@@ -1,0 +1,3 @@
+@Header[name = "TestClass", type = OBJECT]
+
+import uwu.test2;
