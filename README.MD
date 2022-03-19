@@ -1,3 +1,3 @@
-#StenyaLang designed for StenyaFramework
+# StenyaLang designed for StenyaFramework
 
 Dynamic programming language
