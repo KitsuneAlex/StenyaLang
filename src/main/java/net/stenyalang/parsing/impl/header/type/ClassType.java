@@ -21,6 +21,11 @@ public enum ClassType {
     /**
      * Object class type.
      */
-    OBJECT
+    OBJECT,
+
+    /**
+     * Super class type.
+     */
+    SUPER;
 
 }

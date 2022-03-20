@@ -1,0 +1,73 @@
+# Declaration: NAME = Pattern
+
+# Placeholder
+PLACEHOLDER = {place}
+
+# Numbers signed
+
+S_INT = i32
+S_LONG = i64
+S_FLOAT = sf32
+S_SHORT = i16
+
+# Numbers unsigned
+
+S_INT = u32
+S_LONG = u64
+S_FLOAT = uf32
+S_SHORT = u16
+
+# Primitive types
+
+VALUE = val
+VARIABLE = var
+
+# Functions
+
+FUNCTION = fun
+
+# Array
+
+TYPED_ARRAY = [{place}]
+UNSIGNED_ARRAY = []
+
+# Other types
+
+BOOL = boolean
+STRING = string
+CHAR = char
+
+# Key words
+
+THREAD_ASYNC = async
+THREAD_AWAIT = await
+
+LOOP_BREAK = break
+LOOP_CONTINUE = continue
+
+OVERRIDE = override
+ENUM = enum
+
+STATE_ELSE = else
+STATE_IF = if
+STATE_FOR = for
+STATE_WHILE = while
+STATE_RETURN = return
+
+BOOL_STATE = false
+BOOL_STATE = true
+
+IMPLEMENTATION = impl
+
+STRUCTURE = struct
+SUPER_CLASS = super
+
+UNSAFE_DECLARATION = unsafe
+
+# Definition syntax
+
+VARIABLE = {name}: {type}
+
+RETURN_TYPE = -> {type}
+
+

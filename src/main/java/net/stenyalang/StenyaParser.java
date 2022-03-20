@@ -28,8 +28,6 @@ public class StenyaParser {
             try {
                 final ClassFile classFile = new ClassParser(name).parse(pairs).getClassFile();
 
-
-                System.out.println(classFile);
             } catch (ParsingException e) {
                 e.printStackTrace();
             }

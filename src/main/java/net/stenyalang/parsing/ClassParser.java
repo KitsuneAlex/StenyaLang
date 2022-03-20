@@ -1,6 +1,7 @@
 package net.stenyalang.parsing;
 
 import net.stenyalang.parsing.exception.ParsingException;
+import net.stenyalang.parsing.impl.entry.EntryFunctionParser;
 import net.stenyalang.parsing.impl.header.HeaderLineParser;
 import net.stenyalang.parsing.impl.importing.ImportLineParser;
 import net.stenyalang.parsing.object.ClassFile;
@@ -35,7 +36,8 @@ public class ClassParser implements IClassParser {
         parsers.addAll(Arrays.asList(
 
                 new ImportLineParser(this),
-                new HeaderLineParser(this)
+                new HeaderLineParser(this),
+                new EntryFunctionParser(this)
 
         ));
     }
@@ -44,18 +46,20 @@ public class ClassParser implements IClassParser {
     public ClassParser parse(final List<CodeLine> content) throws ParsingException {
         for (CodeLine entry : content) {
             for (LineParser parser : this.parsers) {
-
-                if (parser instanceof MultiLineParser<?>) {
-                    final MultiLineParser<?> multiLineParser = (MultiLineParser<?>) parser;
-                    multiLineParser.parseLines(entry);
-                }
                 if (parser instanceof SingleLineParser<?>) {
                     final SingleLineParser<?> multiLineParser = (SingleLineParser<?>) parser;
                     multiLineParser.parseLine(entry);
                 }
-
             }
         }
+
+        for (LineParser parser : this.parsers) {
+            if (parser instanceof MultiLineParser<?>) {
+                final MultiLineParser<?> multiLineParser = (MultiLineParser<?>) parser;
+                multiLineParser.parseLines(content.toArray(new CodeLine[0]));
+            }
+        }
+
         return this;
     }
 

@@ -1,3 +1,7 @@
 @Header[name = "TestClass", type = OBJECT]
 
 import uwu.test2;
+
+fun main(args: [string]) -> i32 {
+
+}

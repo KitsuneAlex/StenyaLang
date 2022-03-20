@@ -9,6 +9,12 @@ import net.stenyalang.units.CodeLine;
  */
 public abstract class MultiLineParser<R> implements LineParser {
 
+    private final ClassParser classParser;
+
+    protected MultiLineParser(ClassParser classParser) {
+        this.classParser = classParser;
+    }
+
     /**
      * Is valid line to parse boolean.
      *
